@@ -1,0 +1,6 @@
+@CryptoQuoteAPI_HostAddress = http://localhost:5231
+
+GET {{CryptoQuoteAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
