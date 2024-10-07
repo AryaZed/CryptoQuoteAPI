@@ -12,18 +12,20 @@ namespace CryptoQuoteAPI.Services.BackgroundServices
         private readonly ICryptoService _cryptoService;
         private readonly IHubContext<CryptoHub> _hubContext;
         private readonly ILogger<BackgroundCryptoUpdateService> _logger;
-        private readonly string _cryptoCode = "BTC"; // You can make this configurable
+        private readonly ICryptoSettingsService _cryptoSettingsService;
         private readonly List<string> _currencies = new List<string> { "USD", "EUR", "BRL", "GBP", "AUD" };
-        private readonly TimeSpan _updateInterval = TimeSpan.FromMinutes(5);
+        private readonly TimeSpan _updateInterval = TimeSpan.FromSeconds(30);
 
         public BackgroundCryptoUpdateService(
             ICryptoService cryptoService,
             IHubContext<CryptoHub> hubContext,
-            ILogger<BackgroundCryptoUpdateService> logger)
+            ILogger<BackgroundCryptoUpdateService> logger,
+            ICryptoSettingsService cryptoSettingsService)
         {
             _cryptoService = cryptoService;
             _hubContext = hubContext;
             _logger = logger;
+            _cryptoSettingsService = cryptoSettingsService;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -34,8 +36,10 @@ namespace CryptoQuoteAPI.Services.BackgroundServices
             {
                 try
                 {
-                    _logger.LogInformation("Fetching cryptocurrency prices for {CryptoCode}.", _cryptoCode);
-                    var prices = await _cryptoService.GetCryptoPricesAsync(_cryptoCode, _currencies, stoppingToken);
+                    var cryptoCode = _cryptoSettingsService.GetCryptoCode();
+
+                    _logger.LogInformation("Fetching cryptocurrency prices for {CryptoCode}.", cryptoCode);
+                    var prices = await _cryptoService.GetCryptoPricesAsync(cryptoCode, _currencies, stoppingToken);
 
                     foreach (var price in prices)
                     {
@@ -43,7 +47,7 @@ namespace CryptoQuoteAPI.Services.BackgroundServices
                         {
                             await _hubContext.Clients.All.SendAsync(
                                 "ReceiveCryptoUpdate",
-                                _cryptoCode,
+                                cryptoCode,
                                 price.Currency,
                                 price.Price.Value,
                                 stoppingToken);

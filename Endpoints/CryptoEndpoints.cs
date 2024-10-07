@@ -134,6 +134,29 @@ namespace CryptoQuoteAPI.Endpoints
             .Produces(StatusCodes.Status503ServiceUnavailable)
             .Produces(StatusCodes.Status500InternalServerError)
             .WithTags("Crypto");
+
+            app.MapGet("/crypto/cryptoCode", (ICryptoSettingsService cryptoSettingsService) =>
+            {
+                var cryptoCode = cryptoSettingsService.GetCryptoCode();
+                return Results.Ok(new { CryptoCode = cryptoCode });
+            })
+            .WithName("GetCryptoCode")
+            .Produces(StatusCodes.Status200OK);
+            
+            app.MapPost("/crypto/cryptoCode", async (HttpContext http, ICryptoSettingsService cryptoSettingsService) =>
+            {
+                var request = await http.Request.ReadFromJsonAsync<CryptoCodeUpdateRequest>();
+                if (request == null || string.IsNullOrWhiteSpace(request.CryptoCode))
+                {
+                    return Results.BadRequest(new { Message = "CryptoCode cannot be empty." });
+                }
+
+                cryptoSettingsService.SetCryptoCode(request.CryptoCode);
+                return Results.Ok(new { Message = $"CryptoCode updated to {request.CryptoCode.ToUpper()}." });
+            })
+            .WithName("SetCryptoCode")
+            .Produces(StatusCodes.Status200OK)
+            .Produces(StatusCodes.Status400BadRequest);
         }
     }
 }

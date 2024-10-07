@@ -66,6 +66,41 @@
             });
     });
 
+    $('#set-crypto-form').on('submit', function (e) {
+        e.preventDefault();
+
+        const newCryptoCode = $('#newCryptoCode').val().trim().toUpperCase();
+
+        if (!newCryptoCode) {
+            toastr.error('Please enter a new cryptocurrency code.', 'Input Error');
+            return;
+        }
+
+        // Make the API call to set new crypto code
+        fetch('/crypto/cryptoCode', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ CryptoCode: newCryptoCode })
+        })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => { throw err; });
+                }
+                return response.json();
+            })
+            .then(data => {
+                toastr.success(data.message, 'Success');
+                $('#newCryptoCode').val(''); // Clear input
+                $('#cryptoCode').val(newCryptoCode);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                toastr.error(error.message || 'An error occurred while setting the new cryptocurrency code.', 'Error');
+            });
+    });
+
     // Initialize SignalR connection
     const connection = new signalR.HubConnectionBuilder()
         .withUrl("/cryptohub") // Must match the hub mapping in Program.cs
@@ -108,7 +143,6 @@
         }
     });
 
-    // Polling for live updates every 60 seconds
     setInterval(function () {
         const cryptoCode = $('#cryptoCode').val().trim().toUpperCase();
         const currencies = $('#currencies').val();

@@ -25,6 +25,8 @@ builder.Services.Configure<CoinMarketCapConfig>(builder.Configuration.GetSection
 builder.Services.Configure<ExchangeRatesConfig>(builder.Configuration.GetSection("ExchangeRates"));
 builder.Services.Configure<CryptoUpdateSettings>(builder.Configuration.GetSection("CryptoUpdateSettings"));
 
+builder.Services.AddSingleton<ICryptoSettingsService, CryptoSettingsService>();
+
 // Add endpoints API explorer and Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
