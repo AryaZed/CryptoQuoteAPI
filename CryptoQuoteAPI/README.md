@@ -52,6 +52,13 @@ CryptoQuote Dashboard is a responsive web application designed to provide real-t
   - Polly
   - Docker
   - Serilog
+  - InMemory Cache
+  - FluentValidation
+  - Rate Limit
+  - XUnit
+  - FluentAssertion
+  - Mock
+  - BackgrountService
 
 ## Getting Started
 
