@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CryptoQuoteProject\\CryptoQuoteAPI.Tests\\CryptoQuoteAPI.Tests.csproj": {}
+    "D:\\MyProjectOkala\\CryptoQuoteAPI\\CryptoQuoteAPI.Tests\\CryptoQuoteAPI.Tests.csproj": {}
   },
   "projects": {
-    "D:\\CryptoQuoteProject\\CryptoQuoteAPI.Tests\\CryptoQuoteAPI.Tests.csproj": {
+    "D:\\MyProjectOkala\\CryptoQuoteAPI\\CryptoQuoteAPI.Tests\\CryptoQuoteAPI.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CryptoQuoteProject\\CryptoQuoteAPI.Tests\\CryptoQuoteAPI.Tests.csproj",
+        "projectUniqueName": "D:\\MyProjectOkala\\CryptoQuoteAPI\\CryptoQuoteAPI.Tests\\CryptoQuoteAPI.Tests.csproj",
         "projectName": "CryptoQuoteAPI.Tests",
-        "projectPath": "D:\\CryptoQuoteProject\\CryptoQuoteAPI.Tests\\CryptoQuoteAPI.Tests.csproj",
+        "projectPath": "D:\\MyProjectOkala\\CryptoQuoteAPI\\CryptoQuoteAPI.Tests\\CryptoQuoteAPI.Tests.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "D:\\CryptoQuoteProject\\CryptoQuoteAPI.Tests\\obj\\",
+        "outputPath": "D:\\MyProjectOkala\\CryptoQuoteAPI\\CryptoQuoteAPI.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -35,8 +35,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\CryptoQuoteProject\\CryptoQuoteAPI\\CryptoQuoteAPI.csproj": {
-                "projectPath": "D:\\CryptoQuoteProject\\CryptoQuoteAPI\\CryptoQuoteAPI.csproj"
+              "D:\\MyProjectOkala\\CryptoQuoteAPI\\CryptoQuoteAPI\\CryptoQuoteAPI.csproj": {
+                "projectPath": "D:\\MyProjectOkala\\CryptoQuoteAPI\\CryptoQuoteAPI\\CryptoQuoteAPI.csproj"
               }
             }
           }
@@ -105,14 +105,14 @@
         }
       }
     },
-    "D:\\CryptoQuoteProject\\CryptoQuoteAPI\\CryptoQuoteAPI.csproj": {
+    "D:\\MyProjectOkala\\CryptoQuoteAPI\\CryptoQuoteAPI\\CryptoQuoteAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CryptoQuoteProject\\CryptoQuoteAPI\\CryptoQuoteAPI.csproj",
+        "projectUniqueName": "D:\\MyProjectOkala\\CryptoQuoteAPI\\CryptoQuoteAPI\\CryptoQuoteAPI.csproj",
         "projectName": "CryptoQuoteAPI",
-        "projectPath": "D:\\CryptoQuoteProject\\CryptoQuoteAPI\\CryptoQuoteAPI.csproj",
+        "projectPath": "D:\\MyProjectOkala\\CryptoQuoteAPI\\CryptoQuoteAPI\\CryptoQuoteAPI.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "D:\\CryptoQuoteProject\\CryptoQuoteAPI\\obj\\",
+        "outputPath": "D:\\MyProjectOkala\\CryptoQuoteAPI\\CryptoQuoteAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

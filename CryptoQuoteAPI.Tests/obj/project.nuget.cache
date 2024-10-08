@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z663uTJB8oLdTuQfA2tHNbz6rVo8LmEewHLNL9pjg2E/A3OCd8lxFoKMimVFrH+Qu9kHQksgIZOrnbRL47eWjg==",
+  "dgSpecHash": "3dHEiaXLOkUYOP0dt0Qqxwehb44Jl/dyh1LTBpi0ezz8SJjiDa8lI2FcgYzgpQdkI0pWI5qHJLn3nJ+wjaovVw==",
   "success": true,
-  "projectFilePath": "D:\\CryptoQuoteProject\\CryptoQuoteAPI.Tests\\CryptoQuoteAPI.Tests.csproj",
+  "projectFilePath": "D:\\MyProjectOkala\\CryptoQuoteAPI\\CryptoQuoteAPI.Tests\\CryptoQuoteAPI.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus\\.nuget\\packages\\aspnetcoreratelimit\\5.0.0\\aspnetcoreratelimit.5.0.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
