@@ -1,0 +1,50 @@
+2024-10-08 12:38:52.193 +03:30 [INF] BackgroundCryptoUpdateService is starting.
+2024-10-08 12:38:52.196 +03:30 [INF] Fetching cryptocurrency prices for null.
+2024-10-08 12:38:52.210 +03:30 [WRN] Failed to determine the https port for redirect.
+2024-10-08 12:38:52.329 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=&convert=USD
+2024-10-08 12:38:52.329 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=&convert=EUR
+2024-10-08 12:38:52.329 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=&convert=BRL
+2024-10-08 12:38:52.329 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=&convert=GBP
+2024-10-08 12:38:52.329 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=&convert=AUD
+2024-10-08 12:38:52.338 +03:30 [WRN] Request to CoinMarketCap API was canceled for AUD.
+2024-10-08 12:38:52.338 +03:30 [WRN] Request to CoinMarketCap API was canceled for GBP.
+2024-10-08 12:38:52.338 +03:30 [WRN] Request to CoinMarketCap API was canceled for BRL.
+2024-10-08 12:38:52.338 +03:30 [WRN] Request to CoinMarketCap API was canceled for EUR.
+2024-10-08 12:38:52.338 +03:30 [WRN] Request to CoinMarketCap API was canceled for USD.
+2024-10-08 12:38:52.338 +03:30 [ERR] Error occurred while fetching cryptocurrency prices.
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendCoreAsync(HttpRequestMessage request, Context context, CancellationToken cancellationToken)
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, CancellationToken cancellationToken, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy`1.ExecuteInternalAsync(Func`3 action, Context context, Boolean continueOnCapturedContext, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at CryptoQuoteAPI.Services.CoinMarketCap.CryptoService.FetchPriceAsync(String cryptoCode, String currency, CancellationToken cancellationToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\CoinMarketCap\CryptoService.cs:line 54
+   at CryptoQuoteAPI.Services.CoinMarketCap.CryptoService.GetCryptoPricesAsync(String cryptoCode, IEnumerable`1 currencies, CancellationToken cancellationToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\CoinMarketCap\CryptoService.cs:line 145
+2024-10-08 12:38:52.339 +03:30 [ERR] Error occurred while fetching or pushing cryptocurrency prices.
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendCoreAsync(HttpRequestMessage request, Context context, CancellationToken cancellationToken)
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, CancellationToken cancellationToken, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy`1.ExecuteInternalAsync(Func`3 action, Context context, Boolean continueOnCapturedContext, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.PolicyHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|5_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at CryptoQuoteAPI.Services.CoinMarketCap.CryptoService.FetchPriceAsync(String cryptoCode, String currency, CancellationToken cancellationToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\CoinMarketCap\CryptoService.cs:line 54
+   at CryptoQuoteAPI.Services.CoinMarketCap.CryptoService.GetCryptoPricesAsync(String cryptoCode, IEnumerable`1 currencies, CancellationToken cancellationToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\CoinMarketCap\CryptoService.cs:line 145
+   at CryptoQuoteAPI.Services.BackgroundServices.BackgroundCryptoUpdateService.ExecuteAsync(CancellationToken stoppingToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\BackgroundServices\BackgroundCryptoUpdateService.cs:line 42

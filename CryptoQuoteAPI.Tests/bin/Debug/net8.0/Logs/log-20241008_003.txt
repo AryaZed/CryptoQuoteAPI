@@ -1,0 +1,42 @@
+2024-10-08 12:13:35.441 +03:30 [INF] BackgroundCryptoUpdateService is starting.
+2024-10-08 12:13:35.445 +03:30 [INF] Fetching cryptocurrency prices for BTC.
+2024-10-08 12:13:35.454 +03:30 [WRN] Failed to determine the https port for redirect.
+2024-10-08 12:13:36.287 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=BTC&convert=USD
+2024-10-08 12:13:36.288 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=BTC&convert=EUR
+2024-10-08 12:13:36.288 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=BTC&convert=BRL
+2024-10-08 12:13:36.507 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=BTC&convert=GBP
+2024-10-08 12:13:36.781 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=BTC&convert=AUD
+2024-10-08 12:13:36.919 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=RRR&convert=USD
+2024-10-08 12:13:36.921 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=RRR&convert=EUR
+2024-10-08 12:13:37.010 +03:30 [INF] Successfully pushed cryptocurrency prices to clients.
+2024-10-08 12:13:37.167 +03:30 [ERR] Error occurred while fetching cryptocurrency prices.
+CryptoQuoteAPI.Exceptions.CryptocurrencyNotFoundException: Cryptocurrency 'RRR' was not found.
+   at CryptoQuoteAPI.Services.CoinMarketCap.CryptoService.FetchPriceAsync(String cryptoCode, String currency, CancellationToken cancellationToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\CoinMarketCap\CryptoService.cs:line 120
+   at CryptoQuoteAPI.Services.CoinMarketCap.CryptoService.GetCryptoPricesAsync(String cryptoCode, IEnumerable`1 currencies, CancellationToken cancellationToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\CoinMarketCap\CryptoService.cs:line 145
+2024-10-08 12:13:37.168 +03:30 [ERR] Cryptocurrency 'rrr' not found.
+CryptoQuoteAPI.Exceptions.CryptocurrencyNotFoundException: Cryptocurrency 'RRR' was not found.
+   at CryptoQuoteAPI.Services.CoinMarketCap.CryptoService.FetchPriceAsync(String cryptoCode, String currency, CancellationToken cancellationToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\CoinMarketCap\CryptoService.cs:line 120
+   at CryptoQuoteAPI.Services.CoinMarketCap.CryptoService.GetCryptoPricesAsync(String cryptoCode, IEnumerable`1 currencies, CancellationToken cancellationToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\CoinMarketCap\CryptoService.cs:line 145
+   at CryptoQuoteAPI.Endpoints.CryptoEndpoint.HandleAsync(GetCryptoQuoteRequest request, ICryptoService cryptoService, IExchangeRateService exchangeRateService, CancellationToken cancellationToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Endpoints\CryptoEndpoints.cs:line 59
+2024-10-08 12:16:14.321 +03:30 [INF] BackgroundCryptoUpdateService is starting.
+2024-10-08 12:16:14.346 +03:30 [INF] Fetching cryptocurrency prices for null.
+2024-10-08 12:16:14.352 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=&convert=USD
+2024-10-08 12:16:14.370 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=&convert=EUR
+2024-10-08 12:16:14.371 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=&convert=BRL
+2024-10-08 12:16:14.371 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=&convert=GBP
+2024-10-08 12:16:14.371 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=&convert=AUD
+2024-10-08 12:16:14.432 +03:30 [WRN] Failed to determine the https port for redirect.
+2024-10-08 12:16:14.954 +03:30 [ERR] CoinMarketCap API error: "BadRequest", Content: {"status":{"timestamp":"2024-10-08T08:46:14.031Z","error_code":400,"error_message":"\"symbol\" is not allowed to be empty","elapsed":0,"credit_count":0}} for USD
+2024-10-08 12:16:14.954 +03:30 [ERR] CoinMarketCap API error: "BadRequest", Content: {"status":{"timestamp":"2024-10-08T08:46:14.030Z","error_code":400,"error_message":"\"symbol\" is not allowed to be empty","elapsed":0,"credit_count":0}} for GBP
+2024-10-08 12:16:14.954 +03:30 [ERR] CoinMarketCap API error: "BadRequest", Content: {"status":{"timestamp":"2024-10-08T08:46:14.031Z","error_code":400,"error_message":"\"symbol\" is not allowed to be empty","elapsed":0,"credit_count":0}} for BRL
+2024-10-08 12:16:14.954 +03:30 [ERR] CoinMarketCap API error: "BadRequest", Content: {"status":{"timestamp":"2024-10-08T08:46:14.030Z","error_code":400,"error_message":"\"symbol\" is not allowed to be empty","elapsed":0,"credit_count":0}} for AUD
+2024-10-08 12:16:15.130 +03:30 [ERR] CoinMarketCap API error: "BadRequest", Content: {"status":{"timestamp":"2024-10-08T08:46:14.210Z","error_code":400,"error_message":"\"symbol\" is not allowed to be empty","elapsed":0,"credit_count":0}} for EUR
+2024-10-08 12:16:15.131 +03:30 [ERR] Error occurred while fetching cryptocurrency prices.
+System.Exception: Failed to retrieve cryptocurrency prices for USD. API error: Bad Request
+   at CryptoQuoteAPI.Services.CoinMarketCap.CryptoService.FetchPriceAsync(String cryptoCode, String currency, CancellationToken cancellationToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\CoinMarketCap\CryptoService.cs:line 76
+   at CryptoQuoteAPI.Services.CoinMarketCap.CryptoService.GetCryptoPricesAsync(String cryptoCode, IEnumerable`1 currencies, CancellationToken cancellationToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\CoinMarketCap\CryptoService.cs:line 145
+2024-10-08 12:16:15.132 +03:30 [ERR] Error occurred while fetching or pushing cryptocurrency prices.
+System.Exception: Failed to retrieve cryptocurrency prices for USD. API error: Bad Request
+   at CryptoQuoteAPI.Services.CoinMarketCap.CryptoService.FetchPriceAsync(String cryptoCode, String currency, CancellationToken cancellationToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\CoinMarketCap\CryptoService.cs:line 76
+   at CryptoQuoteAPI.Services.CoinMarketCap.CryptoService.GetCryptoPricesAsync(String cryptoCode, IEnumerable`1 currencies, CancellationToken cancellationToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\CoinMarketCap\CryptoService.cs:line 145
+   at CryptoQuoteAPI.Services.BackgroundServices.BackgroundCryptoUpdateService.ExecuteAsync(CancellationToken stoppingToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\BackgroundServices\BackgroundCryptoUpdateService.cs:line 42

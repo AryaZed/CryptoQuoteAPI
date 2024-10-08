@@ -1,0 +1,22 @@
+2024-10-08 12:13:35.093 +03:30 [INF] BackgroundCryptoUpdateService is starting.
+2024-10-08 12:13:35.113 +03:30 [INF] Fetching cryptocurrency prices for null.
+2024-10-08 12:13:35.120 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=&convert=USD
+2024-10-08 12:13:35.144 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=&convert=EUR
+2024-10-08 12:13:35.144 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=&convert=BRL
+2024-10-08 12:13:35.145 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=&convert=GBP
+2024-10-08 12:13:35.145 +03:30 [INF] Sending request to CoinMarketCap API: v1/cryptocurrency/quotes/latest?symbol=&convert=AUD
+2024-10-08 12:13:35.226 +03:30 [WRN] Failed to determine the https port for redirect.
+2024-10-08 12:13:35.779 +03:30 [ERR] CoinMarketCap API error: "BadRequest", Content: {"status":{"timestamp":"2024-10-08T08:43:34.859Z","error_code":400,"error_message":"\"symbol\" is not allowed to be empty","elapsed":0,"credit_count":0}} for USD
+2024-10-08 12:13:35.779 +03:30 [ERR] CoinMarketCap API error: "BadRequest", Content: {"status":{"timestamp":"2024-10-08T08:43:34.858Z","error_code":400,"error_message":"\"symbol\" is not allowed to be empty","elapsed":0,"credit_count":0}} for AUD
+2024-10-08 12:13:35.779 +03:30 [ERR] CoinMarketCap API error: "BadRequest", Content: {"status":{"timestamp":"2024-10-08T08:43:34.863Z","error_code":400,"error_message":"\"symbol\" is not allowed to be empty","elapsed":0,"credit_count":0}} for BRL
+2024-10-08 12:13:35.779 +03:30 [ERR] CoinMarketCap API error: "BadRequest", Content: {"status":{"timestamp":"2024-10-08T08:43:34.861Z","error_code":400,"error_message":"\"symbol\" is not allowed to be empty","elapsed":0,"credit_count":0}} for EUR
+2024-10-08 12:13:37.090 +03:30 [ERR] CoinMarketCap API error: "BadRequest", Content: {"status":{"timestamp":"2024-10-08T08:43:35.269Z","error_code":400,"error_message":"\"symbol\" is not allowed to be empty","elapsed":0,"credit_count":0}} for GBP
+2024-10-08 12:13:37.090 +03:30 [ERR] Error occurred while fetching cryptocurrency prices.
+System.Exception: Failed to retrieve cryptocurrency prices for USD. API error: Bad Request
+   at CryptoQuoteAPI.Services.CoinMarketCap.CryptoService.FetchPriceAsync(String cryptoCode, String currency, CancellationToken cancellationToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\CoinMarketCap\CryptoService.cs:line 76
+   at CryptoQuoteAPI.Services.CoinMarketCap.CryptoService.GetCryptoPricesAsync(String cryptoCode, IEnumerable`1 currencies, CancellationToken cancellationToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\CoinMarketCap\CryptoService.cs:line 145
+2024-10-08 12:13:37.091 +03:30 [ERR] Error occurred while fetching or pushing cryptocurrency prices.
+System.Exception: Failed to retrieve cryptocurrency prices for USD. API error: Bad Request
+   at CryptoQuoteAPI.Services.CoinMarketCap.CryptoService.FetchPriceAsync(String cryptoCode, String currency, CancellationToken cancellationToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\CoinMarketCap\CryptoService.cs:line 76
+   at CryptoQuoteAPI.Services.CoinMarketCap.CryptoService.GetCryptoPricesAsync(String cryptoCode, IEnumerable`1 currencies, CancellationToken cancellationToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\CoinMarketCap\CryptoService.cs:line 145
+   at CryptoQuoteAPI.Services.BackgroundServices.BackgroundCryptoUpdateService.ExecuteAsync(CancellationToken stoppingToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\BackgroundServices\BackgroundCryptoUpdateService.cs:line 42

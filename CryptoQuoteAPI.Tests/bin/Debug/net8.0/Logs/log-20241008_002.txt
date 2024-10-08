@@ -1,0 +1,6 @@
+2024-10-08 12:13:35.364 +03:30 [INF] BackgroundCryptoUpdateService is starting.
+2024-10-08 12:13:35.368 +03:30 [INF] Fetching cryptocurrency prices for null.
+2024-10-08 12:13:35.369 +03:30 [ERR] Error occurred while fetching or pushing cryptocurrency prices.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at CryptoQuoteAPI.Services.BackgroundServices.BackgroundCryptoUpdateService.ExecuteAsync(CancellationToken stoppingToken) in D:\CryptoQuoteProject\CryptoQuoteAPI\Services\BackgroundServices\BackgroundCryptoUpdateService.cs:line 44
+2024-10-08 12:13:35.384 +03:30 [WRN] Failed to determine the https port for redirect.

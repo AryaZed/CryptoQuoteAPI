@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoQuoteAPI", "CryptoQuoteAPI\CryptoQuoteAPI.csproj", "{DB6C2169-604E-425B-8743-165CDC1EEC2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoQuoteAPI.Tests", "CryptoQuoteAPI.Tests\CryptoQuoteAPI.Tests.csproj", "{3D621544-9768-4D8A-A3B4-A09EB6AD865A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB6C2169-604E-425B-8743-165CDC1EEC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB6C2169-604E-425B-8743-165CDC1EEC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB6C2169-604E-425B-8743-165CDC1EEC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB6C2169-604E-425B-8743-165CDC1EEC2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D621544-9768-4D8A-A3B4-A09EB6AD865A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D621544-9768-4D8A-A3B4-A09EB6AD865A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D621544-9768-4D8A-A3B4-A09EB6AD865A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D621544-9768-4D8A-A3B4-A09EB6AD865A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

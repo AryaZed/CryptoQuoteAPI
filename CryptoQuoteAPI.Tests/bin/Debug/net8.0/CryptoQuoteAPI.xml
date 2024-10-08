@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CryptoQuoteAPI</name>
+    </assembly>
+    <members>
+        <member name="T:CryptoQuoteAPI.Endpoints.CryptoEndpoint">
+            <summary>
+            Defines the /crypto/{cryptoCode} endpoint.
+            </summary>
+        </member>
+        <member name="M:CryptoQuoteAPI.Endpoints.CryptoEndpoint.#ctor(Microsoft.Extensions.Logging.ILogger{CryptoQuoteAPI.Endpoints.CryptoEndpoint})">
+            <summary>
+            Initializes a new instance of the <see cref="T:CryptoQuoteAPI.Endpoints.CryptoEndpoint"/> class.
+            </summary>
+            <param name="logger">The logger instance.</param>
+        </member>
+        <member name="M:CryptoQuoteAPI.Endpoints.CryptoEndpoint.HandleAsync(CryptoQuoteAPI.Models.CoinMarketCap.GetCryptoQuoteRequest,CryptoQuoteAPI.Services.CoinMarketCap.ICryptoService,CryptoQuoteAPI.Services.ExchangeRate.IExchangeRateService,System.Threading.CancellationToken)">
+            <summary>
+            Handles the incoming request to get cryptocurrency quotes.
+            </summary>
+            <param name="request">The request containing cryptocurrency code and target currencies.</param>
+            <param name="cryptoService">Service to fetch cryptocurrency prices.</param>
+            <param name="exchangeRateService">Service to fetch exchange rates.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>A response containing cryptocurrency prices in target currencies.</returns>
+        </member>
+        <member name="P:CryptoQuoteAPI.Models.CoinMarketCap.CryptoQuoteResponse.Currency">
+            <summary>
+            The target currency code (e.g., USD, EUR).
+            </summary>
+        </member>
+        <member name="P:CryptoQuoteAPI.Models.CoinMarketCap.CryptoQuoteResponse.Price">
+            <summary>
+            The price of the cryptocurrency in the target currency.
+            </summary>
+        </member>
+        <member name="P:CryptoQuoteAPI.Models.CoinMarketCap.CryptoQuoteResponse.Error">
+            <summary>
+            Error message if the price or exchange rate is unavailable.
+            </summary>
+        </member>
+        <member name="P:CryptoQuoteAPI.Models.CoinMarketCap.GetCryptoQuoteRequest.CryptoCode">
+            <summary>
+            The cryptocurrency code (e.g., BTC, ETH).
+            </summary>
+        </member>
+        <member name="P:CryptoQuoteAPI.Models.CoinMarketCap.GetCryptoQuoteRequest.Currencies">
+            <summary>
+            Optional list of target currencies (e.g., USD, EUR).
+            </summary>
+        </member>
+        <member name="T:CryptoQuoteAPI.Services.BackgroundServices.BackgroundCryptoUpdateService">
+            <summary>
+            Background service to periodically fetch and broadcast cryptocurrency prices.
+            </summary>
+        </member>
+    </members>
+</doc>
