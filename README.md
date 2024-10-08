@@ -55,6 +55,9 @@ CryptoQuote Dashboard is a responsive web application designed to provide real-t
   - InMemory Cache
   - FluentValidation
   - Rate Limit
+  - XUnit
+  - FluentAssertion
+  - Mock
 
 ## Getting Started
 
